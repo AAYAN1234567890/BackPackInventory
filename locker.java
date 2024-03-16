@@ -1,3 +1,9 @@
 public class locker {
-    //testing
+
+    public static void main(String[] args) {
+        // asd
+        System.out.println("testing...");
+
+    }
+
 }
