@@ -6,7 +6,7 @@ public class Main{
         Inventory locker = new Inventory();
         Inventory backPack = new Inventory();
         Inventory pencilcase = new Inventory();
-        Scanner Scanner = new Scanner(System.in)
+        Scanner Scanner = new Scanner(System.in);
 
         System.out.println("Welcome to my BackPack Assignment!");
         locker.loading("inventory.txt");
@@ -15,8 +15,8 @@ public class Main{
 
         while(true){
         System.out.println("where would you like to go?\n locker (1) \nbackpack (2) \npencilcase (3)");
-        int todo = scanner.nextInt();
-        scanner.nextLine();
+        int todo = Scanner.nextInt();
+        Scanner.nextLine();
 
         switch(todo){
 
@@ -41,36 +41,46 @@ public class Main{
   
     }
 
-    public static manager(Inventory location){
+    private static void manager(Inventory locker) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'manager'");
+    }
+
+    public Main(Inventory location){
 
 
-        dsplayItems(scanner);
-        System.outprintln("what would you like to do?\n moveitem (1) \n remove item (2)\n additem (3)\n quit (4)");
-        string todo2 = scanner.nextInt();
+        Object Scanner;
+        displayItems(Scanner);
+        System.out.println("what would you like to do?\n moveitem (1) \n remove item (2)\n additem (3)\n quit (4)");
+        int todo2 = ((java.util.Scanner) Scanner).nextInt();
         
        
         if(!todo.isnumeric){
-            System.outprintln("Invalid.");
-            break;
-            
-        }
+            System.out.println("Invalid.");
+        break;
+    }
+        
+
+        ((java.util.Scanner) Scanner).nextLine(); // Consume newline
+
         switch(todo2){
             case 1:
-                System.out.println("what item would you like to move?")
-                string itemtomove = scanner.nextLine();
-                System.outprintln("where to move it ");
-                string destonationItem = scanner.nextLine();
-                
-                if(itemtomove=Inventory.getItems){
-                    Inventory.moveItem(itemtomove destinationItem);
-                    System.outprintln("item has been move to " + destonationItem);
-                }else{
-                    System.outprintln("Invalid.");
+                System.out.println("What item would you like to move?");
+                String itemToMove = Scanner.nextLine();
+                System.out.println("Where to move it?");
+                String destinationItem = Scanner.nextLine();
+
+                if (Inventory.containsItem(itemToMove)) {
+                    Inventory.moveItem(itemToMove, destinationItem);
+                    System.out.println("Item has been moved to " + destinationItem);
+                } else {
+                    System.out.println("Invalid item.");
                 }
+                break;
             case 2:
                 System.out.println("what item would you like to remove ");
-                string removeitem = scanner.nextLine();
-                Inventory.removeItem(removeItem);
+                String removeitem = ((java.util.Scanner) Scanner).nextLine();
+                Inventory.removeItem(removeitem);
 
                 
             case 3:
@@ -101,7 +111,7 @@ public class Main{
 
     }
     
-    public displayItems(location items){
+    public void displayItems(Object scanner){
 
     }
 

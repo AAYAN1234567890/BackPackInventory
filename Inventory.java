@@ -1,46 +1,88 @@
-
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.PrintWriter;
+
 
 public class Inventory {
 
-    private String Inventory.inventory();
-    private ArrayList<Item> inventory = new ArrayList<Item>();
-
+    public static String getItems;
+    //private String Inventory.inventory();
+    private ArrayList<Item> inventory = new ArrayList<>();
+    private String filename = "inventory.txt"; // Assuming filename is a class member
+    
     public Inventory(){
         this.inventory = inventory;
 
     }
     
-    public addItem(Item item){
+    public void addItem(Item item){
         inventory.add(item);
 
     }
 
-    public removeItem(){
+    public void removeItem(Item item){
         inventory.remove(item);
     }
 
-    public moveItem(){
+    public void moveItem(Object destinationItem, Object destinationItem2){
         
     }
 
-    public storing(){
-        // from array list to the designated .txt file 
+    public void storing() {
+        // Writing items from the inventory to a text file
+        if (inventory != null) { // Null check
+            try (PrintWriter file = new PrintWriter(new FileWriter(filename))) {
+                for (Item item : inventory) {
+                    file.println(item.getItemName()); // Assuming there's a method to get the item name
+                }
+            } catch (IOException ex) {
+                // Better handling of exceptions, logging or displaying appropriate message
+                ex.printStackTrace();
+            }
+        } else {
+            System.out.println("Inventory is null."); // Handling null inventory
+        }
+    }//end saveStringArray to a text file  
+        
 
-    }    
-
-    public loading(){
-        //.txt file into arraylist
+    public void loading(String string) {
+        ArrayList<String> temp = new ArrayList<>();
+        try (BufferedReader file = new BufferedReader(new FileReader(filename))) {
+            String line = file.readLine(); // Read the first line
+            while (line != null) {
+                temp.add(line);
+                line = file.readLine(); // Read the next line
+            }
+        } catch (IOException e) {
+            System.out.println(e);
+        }
     }
-
-    public String inventoryName(){
+    
+    public ArrayList<Item> inventoryName(){
         return inventory;
     }    
     
     //getter below
-    public string getItems(){
-        return items;
+    public ArrayList<Item> getItems(){
+        return inventory;
+    }
+
+    public static void removeItem(String removeitem) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'removeItem'");
+    }
+
+    public static boolean containsItem(String itemtomove) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'containsItem'");
+    }
+
+    public static void moveItem(String itemtomove, Object destinationItem) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'moveItem'");
     }
 
 
