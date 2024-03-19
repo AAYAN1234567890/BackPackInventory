@@ -48,7 +48,7 @@ public class Inventory {
     }//end saveStringArray to a text file  
         
 
-    public void loading(String string) {
+    public void loading(String filename) {
         ArrayList<String> temp = new ArrayList<>();
         try (BufferedReader file = new BufferedReader(new FileReader(filename))) {
             String line = file.readLine(); // Read the first line

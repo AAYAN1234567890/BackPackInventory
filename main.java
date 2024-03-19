@@ -2,73 +2,79 @@ import java.util.Scanner;
 
 public class Main{
 
+    private static final Inventory Location = null;
+    public static Scanner scanner = new Scanner (System.in);
+
     public static void main(String[] args) {
         Inventory locker = new Inventory();
         Inventory backPack = new Inventory();
         Inventory pencilcase = new Inventory();
-        Scanner Scanner = new Scanner(System.in);
+        //Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to my BackPack Assignment!");
-        locker.loading("inventory.txt");
-        backPack.loading("inventory.txt");
-        pencilcase.loading("inventory.txt");
+        locker.loading("locker.txt");
+        backPack.loading("pencilcase.txt");
+        pencilcase.loading("backpack.txt");
 
         while(true){
-        System.out.println("where would you like to go?\n locker (1) \nbackpack (2) \npencilcase (3)");
-        int todo = Scanner.nextInt();
-        Scanner.nextLine();
+        System.out.println("Where would you like to go?\nLocker (1) \nBackpack (2) \nPencil Case (3) \nExit (4)");
+        int todo = scanner.nextInt();
+        scanner.nextLine();
 
         switch(todo){
 
         case 1:
             manager(locker);
-        case 2:
-            
+            break;
+        case 2: 
             manager(backPack);
-
+            break;
         case 3:
             manager(pencilcase);
+            break;
         case 4:
-            System.out.println("exiting program");
+            System.out.println("Exiting program...");
+            System.exit(0); // Exiting the program
             break;
 
         default:
             System.out.println("Invalid option, please try again.");
-          //break; may be used if needed
+          //break; may be used if needed        
         }
-        
+            
         }
   
     }
 
     private static void manager(Inventory locker) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'manager'");
+        //throw new UnsupportedOperationException("Unimplemented method 'manager'");
+        Main mainInstance = new Main(Location); // Creating an instance of Main to invoke the constructor
     }
 
     public Main(Inventory location){
 
 
         Object Scanner;
-        displayItems(Scanner);
+        displayItems(scanner);
         System.out.println("what would you like to do?\n moveitem (1) \n remove item (2)\n additem (3)\n quit (4)");
-        int todo2 = ((java.util.Scanner) Scanner).nextInt();
+        int todo2 = scanner.nextInt();
         
        
-        if(!todo.isnumeric){
-            System.out.println("Invalid.");
-        break;
-    }
-        
-
-        ((java.util.Scanner) Scanner).nextLine(); // Consume newline
+        // if(!todo.isnumeric){
+        //     System.out.println("Invalid.");
+        //        }
+        // break;
+    
+        scanner.nextLine(); // Consume newline
 
         switch(todo2){
             case 1:
+                System.out.println("Locker:");
                 System.out.println("What item would you like to move?");
-                String itemToMove = Scanner.nextLine();
+                String itemToMove = scanner.nextLine();
                 System.out.println("Where to move it?");
-                String destinationItem = Scanner.nextLine();
+                String destinationItem = scanner.nextLine();
 
                 if (Inventory.containsItem(itemToMove)) {
                     Inventory.moveItem(itemToMove, destinationItem);
@@ -78,20 +84,26 @@ public class Main{
                 }
                 break;
             case 2:
-                System.out.println("what item would you like to remove ");
-                String removeitem = ((java.util.Scanner) Scanner).nextLine();
+                System.out.println("what item would you like to remove ?");
+                String removeitem = scanner.nextLine();
                 Inventory.removeItem(removeitem);
-
-                
+                System.out.println( removeitem + "has been removed.");
+                break;
             case 3:
-                System.out.println("");
-
+            System.out.println("what item would you like to add ?");
+            String additem = scanner.nextLine();
+            Inventory.removeItem(additem);
+            System.out.println(additem + "has been added.");
+            break;
             case 4:
                 System.out.println("exiting");
+                System.exit(0); // Exiting the program
                 break;
 
             default:
                 System.out.println("invaild");
+                break;
+
         }
         
         // ask move item, rdisplay items at locationemove item, add item
