@@ -1,3 +1,0 @@
-textbook
-lock
-letter
