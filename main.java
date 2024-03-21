@@ -243,6 +243,7 @@ public class main {
                 System.out.println("Where to move it?");
                 String destinationItem = scanner.nextLine();
                 inventory.moveItem(itemToMove, destinationItem);
+                //update txt files
                 break;
                 // Assuming moveItem and containsItem methods are implemented in Inventory
                 // inventory.moveItem(itemToMove, destinationItem);
