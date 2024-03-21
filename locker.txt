@@ -1,5 +1,3 @@
-deoderant
-pencil
-laptop
-tissues
-phone
+binder
+book
+lock
