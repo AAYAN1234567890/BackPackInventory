@@ -1,3 +1,4 @@
-pencil
-phone
-eraser
+Pencil
+Phone
+Eraser
+Calculator

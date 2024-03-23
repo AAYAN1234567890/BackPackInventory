@@ -1,3 +1,4 @@
-paper
-calculator
-laptop
+Paper
+Laptop
+Textbook
+Waterbottle
