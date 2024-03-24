@@ -12,16 +12,15 @@
 
  */
 
-// Abstraction: The main class abstracts away the details of inventory management and interaction from the user. 
-// It provides a user-friendly interface for managing items in different inventories.
+// Abstraction: The main class hides the complex details of managing inventories from the user. 
+// It offers a simple and easy-to-use interface for handling items in various inventories.
 
-// Aggregation: The main class aggregates instances of the Inventory class (locker, backpack, and pencilcase) 
-// to manage multiple inventories within the program.
+// Aggregation: The main class brings together instances of the Inventory class (locker, backpack, and pencilcase) to handle multiple inventories effectively in the program.
 
-// Encapsulation: The main class encapsulates the functionality of managing inventories and items 
-// within methods like manager(), which handle interactions with the inventories, 
-// and within Inventory objects by providing methods like addItem(), removeItem(), moveItem(), 
-// loading(), and updating(), which encapsulate the behavior related to inventory management.
+// Encapsulation: The main class encapsulates inventory management functionalities. 
+// It contains methods like manager() to handle interactions with inventories. 
+// Similarly, Inventory objects encapsulate inventory management behavior 
+// through methods like addItem(), removeItem(), moveItem(), loading(), and updating().
 
 
 
@@ -41,9 +40,9 @@
  import java.util.Scanner;
 
  public class main {
-     // IPO: N/A (No specific input/output for this class)
+     // IPO: No specific input or output for this class
      
-     // Getter and Setter: N/A (No specific getters or setters in this class)
+     // Getter and Setter: No specific getters or setters in this class
  
      private static final Scanner scanner = new Scanner(System.in);
      static Inventory locker = new Inventory("Locker");
@@ -94,7 +93,7 @@
          // Process: Managing inventory items based on user input.
          // Output: Displaying inventory items and messages to the console.
  
-         // Getter and Setter: N/A (No specific getters or setters in this method)
+         // Getter and Setter: No specific getters or setters in this method
  
          System.out.println("Items in Selected Inventory:\n-----");
          for (Item item : inventory.getItems()) {

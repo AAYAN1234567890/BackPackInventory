@@ -1,4 +1,3 @@
-Binder
 Books
 Lock
-Supplies
+Binder

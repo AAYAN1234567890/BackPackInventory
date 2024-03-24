@@ -12,12 +12,11 @@
 
  */
 
-// Abstraction: The Item class abstracts away the details of individual items in the inventory. 
-// It provides a simple representation of an item with a single property, itemName.
+// Abstraction: The Item class simplifies the representation of individual inventory items 
+// by focusing on a single property, itemName, abstracting away unnecessary details.
 
-// Encapsulation: The Item class encapsulates the state of an individual item 
-// by keeping its itemName property private and providing access through a getter method.
-
+// Encapsulation: The Item class encapsulates the state of an item by maintaining its itemName property privately. 
+// Access to this property is provided through a getter method, ensuring controlled access to item details.
 
 public class Item {
     private String itemName;
